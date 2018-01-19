@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB7FF847-3C1D-4AA6-A0DF-B77685AE28BF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DreamHackJam</RootNamespace>
+    <AssemblyName>DreamHackJam</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG,TRACE,WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE,WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Collision\collisionBox.vb" />
+    <Compile Include="Collision\collisionTests.vb" />
+    <Compile Include="levelMaker.vb" />
+    <Compile Include="Main\Game1.vb" />
+    <Compile Include="Main\GameLoop.vb" />
+    <Compile Include="Main\Globals.vb" />
+    <Compile Include="Main\Program.vb" />
+    <Compile Include="Math\pathfinding\node.vb" />
+    <Compile Include="Math\pathfinding\pathfinding.vb" />
+    <Compile Include="Math\rotationCalc.vb" />
+    <Compile Include="Objects\Static\bomb.vb" />
+    <Compile Include="Objects\Static\Bullet.vb" />
+    <Compile Include="Objects\Living\EnemyBasic.vb" />
+    <Compile Include="Objects\Static\money.vb" />
+    <Compile Include="Objects\Static\periceingBullet.vb" />
+    <Compile Include="Objects\Static\seakingBullet.vb" />
+    <Compile Include="Objects\Turrets\turret1.vb" />
+    <Compile Include="Objects\Turrets\turret3.vb" />
+    <Compile Include="Scenes\deathScene.vb" />
+    <Compile Include="Scenes\menuScene.vb" />
+    <Compile Include="UI\destroySelect.vb" />
+    <Compile Include="UI\repairSelect.vb" />
+    <Compile Include="Objects\Turrets\turretSelect.vb" />
+    <Compile Include="Objects\Turrets\turret2.vb" />
+    <Compile Include="UI\cursor.vb" />
+    <Compile Include="UI\healthBar.vb" />
+    <Compile Include="Objects\Static\house.vb" />
+    <Compile Include="Objects\Living\player.vb" />
+    <Compile Include="Objects\Static\Wall.vb" />
+    <Compile Include="Properties\AssemblyInfo.vb" />
+    <Compile Include="Recources\animatedTexture.vb" />
+    <Compile Include="Recources\contentMnger.vb" />
+    <Compile Include="Scenes\gameScene.vb" />
+    <Compile Include="UI\message.vb" />
+    <Compile Include="UI\upgradeSelect.vb" />
+    <Compile Include="UI\userInferface.vb" />
+    <Compile Include="waveMaker.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\8 Side Turret Green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\8 Side Turret Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\8 Side Turret Level 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\8 Side Turret Level 2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\8 Side Turret Level 3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\8 Side Turret Red.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Big Boom Turret Green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Big Boom Turret Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Big Boom Turret Level 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Big Boom Turret Level 2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Big Boom Turret Level 3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Big Boom Turret Red.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Bomb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Broken House.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Bullet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Death Screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Demolish Cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\FenceUP.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\FenceSIDE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Full Map.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Instructions.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\lighteffect.fx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\House 7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Main Cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Main Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\MoneyDrop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Mutant 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Mutant 2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Mutant 3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Pim Poy Pocket.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\player.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\President Sprite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Repair Cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Standard Tower Turret Green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Standard Tower Turret Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Standard Tower Turret Level 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Standard Tower Turret Level 2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Standard Tower Turret Level 3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Standard Tower Turret Red.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Tree 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\UI Bar Overlay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\UI Bar Underlay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\UI Cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Upgrade Cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\White.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\zombie.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DreamHackJam" />
+    <Import Include="DreamHackJam.My" />
+    <Import Include="DreamHackJam.safeprojectname" />
+    <Import Include="Microsoft.CSharp" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.ApplicationServices" />
+    <Import Include="Microsoft.VisualBasic.CompilerServices" />
+    <Import Include="Microsoft.VisualBasic.Devices" />
+    <Import Include="Microsoft.VisualBasic.FileIO" />
+    <Import Include="Microsoft.VisualBasic.Logging" />
+    <Import Include="Microsoft.VisualBasic.MyServices" />
+    <Import Include="Microsoft.VisualBasic.MyServices.Internal" />
+    <Import Include="Microsoft.Win32" />
+    <Import Include="Microsoft.Win32.SafeHandles" />
+    <Import Include="Microsoft.Xna.Framework" />
+    <Import Include="Microsoft.Xna.Framework.Audio" />
+    <Import Include="Microsoft.Xna.Framework.Content" />
+    <Import Include="Microsoft.Xna.Framework.Design" />
+    <Import Include="Microsoft.Xna.Framework.Graphics" />
+    <Import Include="Microsoft.Xna.Framework.Graphics.PackedVector" />
+    <Import Include="Microsoft.Xna.Framework.Input" />
+    <Import Include="Microsoft.Xna.Framework.Input.Touch" />
+    <Import Include="Microsoft.Xna.Framework.Media" />
+    <Import Include="MonoGame.Utilities" />
+    <Import Include="MonoGame.Utilities.Png" />
+    <Import Include="OpenGL" />
+    <Import Include="System" />
+    <Import Include="System.CodeDom" />
+    <Import Include="System.CodeDom.Compiler" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Concurrent" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Collections.ObjectModel" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.ComponentModel.Design" />
+    <Import Include="System.ComponentModel.Design.Serialization" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Configuration.Assemblies" />
+    <Import Include="System.Deployment.Internal" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Diagnostics.CodeAnalysis" />
+    <Import Include="System.Diagnostics.Contracts" />
+    <Import Include="System.Diagnostics.Contracts.Internal" />
+    <Import Include="System.Diagnostics.Eventing" />
+    <Import Include="System.Diagnostics.Eventing.Reader" />
+    <Import Include="System.Diagnostics.PerformanceData" />
+    <Import Include="System.Diagnostics.SymbolStore" />
+    <Import Include="System.Diagnostics.Tracing" />
+    <Import Include="System.Dynamic" />
+    <Import Include="System.Globalization" />
+    <Import Include="System.IO" />
+    <Import Include="System.IO.Compression" />
+    <Import Include="System.IO.IsolatedStorage" />
+    <Import Include="System.IO.MemoryMappedFiles" />
+    <Import Include="System.IO.Pipes" />
+    <Import Include="System.IO.Ports" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Linq.Expressions" />
+    <Import Include="System.Management.Instrumentation" />
+    <Import Include="System.Media" />
+    <Import Include="System.Net" />
+    <Import Include="System.Net.Cache" />
+    <Import Include="System.Net.Configuration" />
+    <Import Include="System.Net.Mail" />
+    <Import Include="System.Net.Mime" />
+    <Import Include="System.Net.NetworkInformation" />
+    <Import Include="System.Net.Security" />
+    <Import Include="System.Net.Sockets" />
+    <Import Include="System.Net.WebSockets" />
+    <Import Include="System.Reflection" />
+    <Import Include="System.Reflection.Emit" />
+    <Import Include="System.Resources" />
+    <Import Include="System.Runtime" />
+    <Import Include="System.Runtime.CompilerServices" />
+    <Import Include="System.Runtime.ConstrainedExecution" />
+    <Import Include="System.Runtime.DesignerServices" />
+    <Import Include="System.Runtime.ExceptionServices" />
+    <Import Include="System.Runtime.Hosting" />
+    <Import Include="System.Runtime.InteropServices" />
+    <Import Include="System.Runtime.InteropServices.ComTypes" />
+    <Import Include="System.Runtime.InteropServices.Expando" />
+    <Import Include="System.Runtime.InteropServices.WindowsRuntime" />
+    <Import Include="System.Runtime.Remoting" />
+    <Import Include="System.Runtime.Remoting.Activation" />
+    <Import Include="System.Runtime.Remoting.Channels" />
+    <Import Include="System.Runtime.Remoting.Contexts" />
+    <Import Include="System.Runtime.Remoting.Lifetime" />
+    <Import Include="System.Runtime.Remoting.Messaging" />
+    <Import Include="System.Runtime.Remoting.Metadata" />
+    <Import Include="System.Runtime.Remoting.Metadata.W3cXsd2001" />
+    <Import Include="System.Runtime.Remoting.Proxies" />
+    <Import Include="System.Runtime.Remoting.Services" />
+    <Import Include="System.Runtime.Serialization" />
+    <Import Include="System.Runtime.Serialization.Formatters" />
+    <Import Include="System.Runtime.Serialization.Formatters.Binary" />
+    <Import Include="System.Runtime.Versioning" />
+    <Import Include="System.Security" />
+    <Import Include="System.Security.AccessControl" />
+    <Import Include="System.Security.Authentication" />
+    <Import Include="System.Security.Authentication.ExtendedProtection" />
+    <Import Include="System.Security.Authentication.ExtendedProtection.Configuration" />
+    <Import Include="System.Security.Claims" />
+    <Import Include="System.Security.Cryptography" />
+    <Import Include="System.Security.Cryptography.X509Certificates" />
+    <Import Include="System.Security.Permissions" />
+    <Import Include="System.Security.Policy" />
+    <Import Include="System.Security.Principal" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Threading" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Timers" />
+    <Import Include="System.Web" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Markup" />
+    <Import Include="System.Xml" />
+    <Import Include="System.Xml.Resolvers" />
+    <Import Include="System.Xml.Schema" />
+    <Import Include="System.Xml.Serialization" />
+    <Import Include="System.Xml.Serialization.Advanced" />
+    <Import Include="System.Xml.Serialization.Configuration" />
+    <Import Include="System.Xml.XmlConfiguration" />
+    <Import Include="System.Xml.XPath" />
+    <Import Include="System.Xml.Xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\mainFont.spritefont">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Content.mgcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\deathFont.spritefont">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
